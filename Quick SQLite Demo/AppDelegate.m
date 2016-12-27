@@ -20,17 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    DataCenter* center = [DataCenter defaultDataCenter];
-    
-    NSUInteger count = [center allPersons].count;
-    Person* person = [[Person alloc] init];
-    person.name = [NSString stringWithFormat:@"Alice%u", count + 1];
-    person.height = 175;
-    person.age = 21;
-    person.avatar = [UIImage imageNamed:@"avatar"];
-    
-    [center savePerson:person];
-    
+        
     UIWindow* myWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     

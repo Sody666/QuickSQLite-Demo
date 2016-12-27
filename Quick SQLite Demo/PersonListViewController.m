@@ -29,15 +29,20 @@
 
 -(void)setupWidgets{
     _tableViewPersons = QUICK_SUBVIEW(self.view, UITableView);
+    UIButton* buttonAdd = QUICK_SUBVIEW(self.view, UIButton);
     
-    NSString* layout = @"H:|[_tableViewPersons]|;V:|[_tableViewPersons]|;";
+    NSString* layout = @"   H:|[_tableViewPersons]|;\
+                            V:|[_tableViewPersons]-[buttonAdd(44)]-| {left, right};";
     [self.view q_addConstraintsByText:layout
-                        involvedViews:NSDictionaryOfVariableBindings(_tableViewPersons)];
+                        involvedViews:NSDictionaryOfVariableBindings(_tableViewPersons, buttonAdd)];
     
     self.tableViewPersons.delegate = self;
     self.tableViewPersons.dataSource = self;
-    
     self.tableViewPersons.tableFooterView = [[UIView alloc] init];
+    
+    [buttonAdd setTitle:@"Add One Person" forState:UIControlStateNormal];
+    [buttonAdd addTarget:self action:@selector(onAddButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonAdd setBackgroundColor:[UIColor blueColor]];
     
     [self.view setNeedsLayout];
 }
@@ -50,8 +55,25 @@
     return _persons;
 }
 
+-(void)onAddButtonTapped:(id)sender{
+    DataCenter* center = [DataCenter defaultDataCenter];
+    
+    NSUInteger count = [center allPersons].count;
+    Person* person = [[Person alloc] init];
+    person.name = [NSString stringWithFormat:@"Alice%u", count + 1];
+    person.height = 175;
+    person.age = 21;
+    person.avatar = [UIImage imageNamed:@"avatar"];
+    
+    [center savePerson:person];
+
+    _persons = nil;
+    
+    [self.tableViewPersons reloadData];
+}
+
 #pragma mark - table view delegate
-// to make the source code neat, we set it to 100.
+// to make the source code neat, we set it to 75.
 // person table view cell can caculate itself actually.
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 75;

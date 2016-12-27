@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		981D235C1E09808A002F2F0A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 982013491E08D51D001C02F7 /* libsqlite3.tbd */; };
+		981D235C1E09808A002F2F0A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 982013491E08D51D001C02F7 /* libsqlite3.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9820131C1E08C0F5001C02F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820131B1E08C0F5001C02F7 /* main.m */; };
 		9820131F1E08C0F5001C02F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820131E1E08C0F5001C02F7 /* AppDelegate.m */; };
 		982013221E08C0F5001C02F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 982013211E08C0F5001C02F7 /* ViewController.m */; };
@@ -303,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -320,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
