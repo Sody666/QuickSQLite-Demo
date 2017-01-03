@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		981D235C1E09808A002F2F0A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 982013491E08D51D001C02F7 /* libsqlite3.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9820131C1E08C0F5001C02F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820131B1E08C0F5001C02F7 /* main.m */; };
 		9820131F1E08C0F5001C02F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820131E1E08C0F5001C02F7 /* AppDelegate.m */; };
 		982013221E08C0F5001C02F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 982013211E08C0F5001C02F7 /* ViewController.m */; };
 		982013271E08C0F5001C02F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 982013261E08C0F5001C02F7 /* Assets.xcassets */; };
 		982013351E08C14F001C02F7 /* QuickVFL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982013331E08C14F001C02F7 /* QuickVFL.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		982013381E08C189001C02F7 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 982013371E08C189001C02F7 /* DataCenter.m */; };
-		9820133B1E08C3A0001C02F7 /* persons.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9820133A1E08C3A0001C02F7 /* persons.sql */; };
+		9820133B1E08C3A0001C02F7 /* persons.db in Resources */ = {isa = PBXBuildFile; fileRef = 9820133A1E08C3A0001C02F7 /* persons.db */; };
 		9820133E1E08C525001C02F7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 9820133D1E08C525001C02F7 /* Person.m */; };
 		982013411E08CBCC001C02F7 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 982013401E08CBCC001C02F7 /* PersonTableViewCell.m */; };
 		982013441E08CF14001C02F7 /* PersonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 982013431E08CF14001C02F7 /* PersonListViewController.m */; };
 		982013481E08D121001C02F7 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 982013471E08D121001C02F7 /* avatar.png */; };
-		9830FA9D1E097E920042844C /* QuickSQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9830FA9C1E097E920042844C /* QuickSQLite.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		98A2C8811E137F7B009A3522 /* secretPersons.db in Resources */ = {isa = PBXBuildFile; fileRef = 98A2C8801E137F7B009A3522 /* secretPersons.db */; };
+		98A2C8AE1E14E80A009A3522 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A2C8AD1E14E80A009A3522 /* Security.framework */; };
+		98A2C8BA1E14EEA0009A3522 /* QuickSQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A2C8B91E14EEA0009A3522 /* QuickSQLite.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		98A2C8C31E14F330009A3522 /* DataCenterSecret.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A2C8C21E14F330009A3522 /* DataCenterSecret.m */; };
+		98A2C8C61E14F34F009A3522 /* DataCenterClear.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A2C8C51E14F34F009A3522 /* DataCenterClear.m */; };
+		98A2C8C91E14FA9E009A3522 /* PerformanceTesterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A2C8C81E14FA9E009A3522 /* PerformanceTesterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +38,7 @@
 		982013331E08C14F001C02F7 /* QuickVFL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuickVFL.framework; sourceTree = "<group>"; };
 		982013361E08C189001C02F7 /* DataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
 		982013371E08C189001C02F7 /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
-		9820133A1E08C3A0001C02F7 /* persons.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = persons.sql; sourceTree = "<group>"; };
+		9820133A1E08C3A0001C02F7 /* persons.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = persons.db; sourceTree = "<group>"; };
 		9820133C1E08C525001C02F7 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		9820133D1E08C525001C02F7 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		9820133F1E08CBCC001C02F7 /* PersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
@@ -42,8 +46,15 @@
 		982013421E08CF14001C02F7 /* PersonListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonListViewController.h; sourceTree = "<group>"; };
 		982013431E08CF14001C02F7 /* PersonListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonListViewController.m; sourceTree = "<group>"; };
 		982013471E08D121001C02F7 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
-		982013491E08D51D001C02F7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		9830FA9C1E097E920042844C /* QuickSQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuickSQLite.framework; sourceTree = "<group>"; };
+		98A2C8801E137F7B009A3522 /* secretPersons.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = secretPersons.db; sourceTree = "<group>"; };
+		98A2C8AD1E14E80A009A3522 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		98A2C8B91E14EEA0009A3522 /* QuickSQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuickSQLite.framework; sourceTree = "<group>"; };
+		98A2C8C11E14F330009A3522 /* DataCenterSecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenterSecret.h; sourceTree = "<group>"; };
+		98A2C8C21E14F330009A3522 /* DataCenterSecret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenterSecret.m; sourceTree = "<group>"; };
+		98A2C8C41E14F34F009A3522 /* DataCenterClear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenterClear.h; sourceTree = "<group>"; };
+		98A2C8C51E14F34F009A3522 /* DataCenterClear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenterClear.m; sourceTree = "<group>"; };
+		98A2C8C71E14FA9E009A3522 /* PerformanceTesterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformanceTesterViewController.h; sourceTree = "<group>"; };
+		98A2C8C81E14FA9E009A3522 /* PerformanceTesterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformanceTesterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				981D235C1E09808A002F2F0A /* libsqlite3.tbd in Frameworks */,
-				9830FA9D1E097E920042844C /* QuickSQLite.framework in Frameworks */,
+				98A2C8BA1E14EEA0009A3522 /* QuickSQLite.framework in Frameworks */,
+				98A2C8AE1E14E80A009A3522 /* Security.framework in Frameworks */,
 				982013351E08C14F001C02F7 /* QuickVFL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +107,12 @@
 				982013401E08CBCC001C02F7 /* PersonTableViewCell.m */,
 				982013421E08CF14001C02F7 /* PersonListViewController.h */,
 				982013431E08CF14001C02F7 /* PersonListViewController.m */,
+				98A2C8C11E14F330009A3522 /* DataCenterSecret.h */,
+				98A2C8C21E14F330009A3522 /* DataCenterSecret.m */,
+				98A2C8C41E14F34F009A3522 /* DataCenterClear.h */,
+				98A2C8C51E14F34F009A3522 /* DataCenterClear.m */,
+				98A2C8C71E14FA9E009A3522 /* PerformanceTesterViewController.h */,
+				98A2C8C81E14FA9E009A3522 /* PerformanceTesterViewController.m */,
 			);
 			path = "Quick SQLite Demo";
 			sourceTree = "<group>";
@@ -111,8 +128,8 @@
 		982013311E08C14F001C02F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9830FA9C1E097E920042844C /* QuickSQLite.framework */,
-				982013491E08D51D001C02F7 /* libsqlite3.tbd */,
+				98A2C8B91E14EEA0009A3522 /* QuickSQLite.framework */,
+				98A2C8AD1E14E80A009A3522 /* Security.framework */,
 				982013331E08C14F001C02F7 /* QuickVFL.framework */,
 			);
 			path = Frameworks;
@@ -121,8 +138,9 @@
 		982013391E08C3A0001C02F7 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				98A2C8801E137F7B009A3522 /* secretPersons.db */,
 				982013471E08D121001C02F7 /* avatar.png */,
-				9820133A1E08C3A0001C02F7 /* persons.sql */,
+				9820133A1E08C3A0001C02F7 /* persons.db */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -158,6 +176,7 @@
 				TargetAttributes = {
 					982013161E08C0F5001C02F7 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 4TF6TS28RE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -187,7 +206,8 @@
 			files = (
 				982013481E08D121001C02F7 /* avatar.png in Resources */,
 				982013271E08C0F5001C02F7 /* Assets.xcassets in Resources */,
-				9820133B1E08C3A0001C02F7 /* persons.sql in Resources */,
+				9820133B1E08C3A0001C02F7 /* persons.db in Resources */,
+				98A2C8811E137F7B009A3522 /* secretPersons.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +223,10 @@
 				982013411E08CBCC001C02F7 /* PersonTableViewCell.m in Sources */,
 				982013441E08CF14001C02F7 /* PersonListViewController.m in Sources */,
 				9820133E1E08C525001C02F7 /* Person.m in Sources */,
+				98A2C8C61E14F34F009A3522 /* DataCenterClear.m in Sources */,
 				982013381E08C189001C02F7 /* DataCenter.m in Sources */,
+				98A2C8C31E14F330009A3522 /* DataCenterSecret.m in Sources */,
+				98A2C8C91E14FA9E009A3522 /* PerformanceTesterViewController.m in Sources */,
 				9820131C1E08C0F5001C02F7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = 4TF6TS28RE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -322,6 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = 4TF6TS28RE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",

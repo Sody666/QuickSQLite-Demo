@@ -12,7 +12,15 @@
 @interface DataCenter : NSObject
 -(instancetype) init __attribute__((unavailable("init prohibited")));
 
+/**
+ The dabase name should be hide under database.
+ My purpose is for clear and secret use.
+ */
+-(NSString*)databaseName;
 +(id)defaultDataCenter;
 -(BOOL)savePerson:(Person*)person;
 -(NSArray*)allPersons;
+
+-(void)test_saveDefaultPersonForCount:(NSInteger)count;
+-(void)test_saveTransactionDefaultPersonForCount:(NSInteger)count;
 @end

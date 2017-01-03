@@ -9,9 +9,6 @@
 #import "DataCenter.h"
 #import <QuickSQLite/QuickSQLite.h>
 
-
-#define kDBName     @"persons.sql"
-
 #define kTableName  @"person"
 
 #define kColumnId       @"_id"
@@ -27,14 +24,13 @@
 
 @implementation DataCenter
 
+-(NSString*)databaseName{return nil;}
 
 -(id)initInternally{
     self = [super init];
     if (self) {
-        _dbHelper = [[QSQLiteOpenHelper alloc] initWithName:kDBName version:1 openDelegate:self];
-        
+        _dbHelper = [[QSQLiteOpenHelper alloc] initWithName:[self databaseName] version:1 openDelegate:self];// clear version
     }
-    
     return self;
 }
 
@@ -48,12 +44,29 @@
     return sharedCenter;
 }
 
-#define FILL_CONTENT(array, key, value) do{\
-    QDBValue* content = [QDBValue instanceForObject:value withKey:key];\
-    if(content != nil){\
-        [array addObject: content];\
-    }\
-}while(0)
+-(void)test_saveDefaultPersonForCount:(NSInteger)count{
+    NSDictionary* values = @{
+                             kColumnName:@"Alice",
+                             kColumnAge:@(21),
+                             kColumnHeight:@(178),
+                             };
+    for(int i=0; i<count; i++){
+        [self.dbHelper insert:kTableName values:values];
+    }
+}
+
+-(void)test_saveTransactionDefaultPersonForCount:(NSInteger)count{
+    NSDictionary* values = @{
+                             kColumnName:@"Alice",
+                             kColumnAge:@(21),
+                             kColumnHeight:@(178),
+                             };
+    [self.dbHelper beginTransactionWithError:nil];
+    for(int i=0; i<count; i++){
+        [self.dbHelper insert:kTableName values:values];
+    }
+    [self.dbHelper endTransaction];
+}
 
 -(BOOL)savePerson:(Person*)person{
     NSDictionary* values = @{
@@ -93,10 +106,6 @@
 #pragma mark - db open delegate
 -(NSString*) pathToCopyBundleDBFileForSQLiteOpenHelper:(QSQLiteOpenHelper *)openHelper
                                               withName:(NSString*)name{
-    if([kDBName isEqualToString:name]){
-        return [[NSBundle mainBundle] pathForResource:kDBName ofType:nil];
-    }
-    
-    return nil;
+    return [[NSBundle mainBundle] pathForResource:[self databaseName] ofType:nil];
 }
 @end

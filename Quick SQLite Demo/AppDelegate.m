@@ -10,6 +10,7 @@
 #import "Person.h"
 #import "DataCenter.h"
 #import "PersonListViewController.h"
+#import "PerformanceTesterViewController.h"
 
 @interface AppDelegate ()
 @end
@@ -24,7 +25,7 @@
     UIWindow* myWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     
-    UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:[[PersonListViewController alloc] init]];
+    UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:[[PerformanceTesterViewController alloc] init]];
     nvc.navigationBar.translucent = NO;
     
     

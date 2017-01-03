@@ -9,7 +9,7 @@
 #import "PersonListViewController.h"
 #import <QuickVFL/QuickVFL.h>
 #import "PersonTableViewCell.h"
-#import "DataCenter.h"
+#import "DataCenterClear.h"
 
 @interface PersonListViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) UITableView* tableViewPersons;
@@ -49,14 +49,14 @@
 
 -(NSArray*)persons{
     if(_persons == nil){
-        _persons = [[DataCenter defaultDataCenter] allPersons];
+        _persons = [[DataCenterClear defaultDataCenter] allPersons];
     }
     
     return _persons;
 }
 
 -(void)onAddButtonTapped:(id)sender{
-    DataCenter* center = [DataCenter defaultDataCenter];
+    DataCenter* center = [DataCenterClear defaultDataCenter];
     
     NSUInteger count = [center allPersons].count;
     Person* person = [[Person alloc] init];
