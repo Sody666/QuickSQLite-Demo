@@ -88,8 +88,9 @@
     self.labelStatus.text = extraMessage;
     
     
-    DataCenter* dataCenterClear = [DataCenterClear defaultDataCenter];
     DataCenter* dataCenterSecret = [DataCenterSecret defaultDataCenter];
+    DataCenter* dataCenterClear = [DataCenterClear defaultDataCenter];
+    
     
     dispatch_async(serialQueue, ^{
         startDate = [NSDate date];
@@ -139,6 +140,15 @@
     });
     
     
+    dispatch_async(serialQueue, ^{
+        NSArray* all1 = [dataCenterSecret allPersons];
+        NSArray* all2 = [dataCenterClear allPersons];
+        for (Person* p in all1) {
+            NSLog(@"%@",p.name);
+        }
+        
+        NSLog(@"%d %d", all1.count, all2.count);
+    });
     
 
 }

@@ -24,24 +24,24 @@
 
 @implementation DataCenter
 
++(id)defaultDataCenter{return nil;}
 -(NSString*)databaseName{return nil;}
 
--(id)initInternally{
+-(id)init{
     self = [super init];
     if (self) {
-        _dbHelper = [[QSQLiteOpenHelper alloc] initWithName:[self databaseName] version:1 openDelegate:self];// clear version
+        NSString* key = [self keyword];
+        _dbHelper = [[QSQLiteOpenHelper alloc] initWithName:[self databaseName] key:key version:1 pageSize:[self pageSize] openDelegate:self];// clear version
     }
     return self;
 }
 
-+(id)defaultDataCenter{
-    static dispatch_once_t onceToken;
-    static DataCenter* sharedCenter;
-    dispatch_once(&onceToken, ^{
-        sharedCenter = [[self alloc] initInternally];
-    });
-    
-    return sharedCenter;
+-(NSUInteger)pageSize{
+    return QDBPageSizeDefault;
+}
+
+-(NSString*)keyword{
+    return nil;
 }
 
 -(void)test_saveDefaultPersonForCount:(NSInteger)count{
@@ -95,7 +95,9 @@
         person.age = ((NSNumber*)row[kColumnAge]).unsignedIntegerValue;
         person.height =((NSNumber*)row[kColumnHeight]).floatValue;
         person.identity = ((NSNumber*)row[kColumnId]).unsignedIntegerValue;
-        person.avatar = [UIImage imageWithData:row[kColumnAvatar]];
+        if(!isNull(row[kColumnAvatar])){
+            person.avatar = [UIImage imageWithData:row[kColumnAvatar]];
+        }
         
         [result addObject:person];
     }
@@ -106,6 +108,7 @@
 #pragma mark - db open delegate
 -(NSString*) pathToCopyBundleDBFileForSQLiteOpenHelper:(QSQLiteOpenHelper *)openHelper
                                               withName:(NSString*)name{
+    NSLog(@"Claiming: %@:%@:%@", name, [self databaseName], [[NSBundle mainBundle] pathForResource:[self databaseName] ofType:nil]);
     return [[NSBundle mainBundle] pathForResource:[self databaseName] ofType:nil];
 }
 @end

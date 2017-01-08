@@ -17,6 +17,16 @@
  My purpose is for clear and secret use.
  */
 -(NSString*)databaseName;
+
+/**
+ For demo reason. Never do this in your productive code.
+
+ @return keyword for your database. nil if your db is clear.
+ */
+-(NSString*)keyword;
+
+-(NSUInteger)pageSize;
+
 +(id)defaultDataCenter;
 -(BOOL)savePerson:(Person*)person;
 -(NSArray*)allPersons;

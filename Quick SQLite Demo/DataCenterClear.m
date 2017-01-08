@@ -12,4 +12,14 @@
 -(NSString*)databaseName{
     return @"persons.db";
 }
+
++(id)defaultDataCenter{
+    static dispatch_once_t onceToken;
+    static DataCenter* sharedCenter;
+    dispatch_once(&onceToken, ^{
+        sharedCenter = [[self alloc] init];
+    });
+    
+    return sharedCenter;
+}
 @end
